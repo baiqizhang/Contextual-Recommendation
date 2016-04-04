@@ -9,6 +9,11 @@ user_rate_list = {}  # map (uid) -> [(iid,rating,loc,time)]
 
 # similarity
 def cosine_sim(user_1, user_2, time='ANY', location='ANY'):
+    """
+    cosine similarity between users using pre-filtering
+    :return: a float : score
+    """
+
     score_1 = {}
     score_2 = {}
     N1 = 0
@@ -37,7 +42,8 @@ def cosine_sim(user_1, user_2, time='ANY', location='ANY'):
 
 
 def recommend(user, time='ANY', location='ANY'):
-    """recommendation algorithm with pre-filtering
+    """
+    recommendation algorithm with pre-filtering
     :param user: user id
     :param time: ANY or a time
     :param location: ANY or a location
